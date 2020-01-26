@@ -22,19 +22,9 @@ public class OrderFormTest {
         $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! " +
                 "Наш менеджер свяжется с вами в ближайшее время."));
     }
-    /*@Test
-    void InvalidNameTest() {
-        open("http://localhost:9999");
-        SelenideElement form = $("form");
-        form.$("[data-test-id=name] input").setValue("Petrov Vasya");
-        form.$("[data-test-id=phone] input").setValue("+79270000000");
-        form.$("[data-test-id=agreement]").click();
-        form.$("button").click();
-        form.$("span.input__sub").shouldNotHave(exactText("Укажите точно как в паспорте"));
-    }*/
 
     @Test
-    void InvalidNameTest() {
+    void invalidNameTest() {
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Petrov Vasya");
@@ -46,7 +36,7 @@ public class OrderFormTest {
                 getCssValue("color: #ff5c5c;");
     }
     @Test
-    void EmptyNameFieldTest() {
+    void emptyNameFieldTest() {
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=phone] input").setValue("+79270000000");
@@ -56,7 +46,7 @@ public class OrderFormTest {
                 getCssValue("color: #ff5c5c;");
     }
     @Test
-    void EmptyTelFieldTest() {
+    void emptyTelFieldTest() {
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Иванов Василий");
@@ -67,7 +57,7 @@ public class OrderFormTest {
                 getCssValue("color: #ff5c5c;");
     }
     @Test
-    void InvalidTelTest() {
+    void invalidTelTest() {
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Иванов Василий");
@@ -79,7 +69,7 @@ public class OrderFormTest {
                 getCssValue("color: #ff5c5c;");
     }
     @Test
-    void AgreementNotClickTest() {
+    void agreementNotClickTest() {
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Иванов Вася");
